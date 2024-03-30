@@ -1,0 +1,240 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Times New Roman', Times, serif;
+}
+
+
+body{
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(231deg, rgba(155,162,221,1) 0%, rgba(113,74,179,1) 50%, rgba(66,53,139,1) 100%);
+}
+
+.container{
+    width: 90%;
+    max-width: 450px ;
+}
+
+h1{
+    color: antiquewhite;
+    opacity:.6;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height:1.5 ;
+}
+
+.passwordInput-container{
+    position: relative;
+    background-color: rgb(42, 11, 39);
+    border-radius: 1rem;
+    border-bottom: 0.35rem solid rgb(180, 102, 196);
+    margin: 1rem 0;
+    padding-top: 0.35rem;
+}
+
+
+.display{
+    width: 100%;
+    background-color: transparent;
+    padding: 1.15rem 1rem;
+    color:aquamarine;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 30px;
+    letter-spacing: 1px;
+    padding-right: 3.25rem;
+    border: none;
+}
+
+.display::placeholder{
+    position: absolute;
+    top:30%;
+    left:1.5rem;
+    font-size: 1.5rem;
+    line-height: 30px;
+    color: aquamarine;
+    opacity: .6;
+    text-transform: uppercase;
+}
+
+.passwordInput-container button{
+    position: absolute;
+    top:35%;
+    right: 1.5rem;
+    background: transparent;
+    border: none;
+    outline: none;
+    
+}
+
+.passwordData-container{
+    width: 100%;
+    border-radius: 1rem;
+    padding: 2rem;
+    background-color: rgb(42, 11, 39);
+    border-bottom: 0.35rem solid rgb(180, 102, 196);
+}
+
+.passwordLength-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.passwordLength-container p:nth-child(1){
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: white;
+    letter-spacing:.8px ;
+}
+
+.passwordLength-container p:nth-child(2){
+    color: yellow;
+    font-size: 1.5rem;
+    opacity: .9;
+}
+
+.strength-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.75rem;
+    margin-bottom: 2rem;
+    
+}
+
+.strength-container p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: white;
+    letter-spacing:.8px ;
+
+}
+
+#strength{
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+.generateButton{
+    width: 100%;
+    padding: 1rem 0 ;
+    background-color: violet;
+    border-radius: .75rem;
+    text-align: center;
+    letter-spacing:1px;
+    text-transform: uppercase;
+    border-bottom: .20rem solid yellow;
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.check{
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+    gap: 0 1rem;
+}
+
+.check input{
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid cyan;
+    cursor: pointer;
+    position: relative;
+    border-radius: .35rem;
+}
+
+.check input:checked{
+    background-color: cyan;
+}
+
+.check input:checked::before{
+    content: '✔';
+    position: absolute;
+    color: text;
+    font-size: 1.05rem;
+    font-weight: 600;
+    left: 50%;
+    top:-60%;
+    transform: translateX(-50%) translateY(40%);
+}
+
+.check label {
+    color: white;
+    font-size: 1.25rem;
+    letter-spacing: 0.75px;
+}
+
+#passwordLengthSlider{
+    appearance: none;
+    width: 100%;
+    height: .75rem;
+    cursor: pointer;
+    border-radius: 1rem;
+    background-color: rgb(58, 15, 58);
+    margin-top: 1.15rem;
+    background-image: linear-gradient(rgb(147, 58, 198) ,rgb(147, 58, 198));
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+#passwordLengthSlider::-webkit-slider-thumb{
+    position: relative;
+    appearance: none;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    background-color: yellow;
+    cursor: pointer;
+    margin-top: -3px;
+    box-shadow: 0px 0px 20px 0px rgba(255,229,61,0.50);
+    transition: all 100ms ease-in;
+    z-index: 1;
+}
+
+#passwordLengthSlider:focus{
+    outline: 2px solid yellow;
+}
+
+#passwordLengthSlider::-webkit-slider-thumb:hover{
+    outline: 2px solid yellow;
+    background-color: rgb(41, 24, 41);
+    box-shadow: 0px 0px 25px 5px rgba(255,229,61,0.80);
+   
+}
+
+.copyBtn {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.copymsg{
+    position: absolute;
+    background-color: rgb(61, 34, 61);
+    color: yellow;
+    font-size: 1.25rem;
+    top: -35px;
+    left: -25px;
+    padding: 5px 10px;
+    border-radius: 1rem;
+    opacity: 0 ;
+    transform: scale(0);
+    transform-origin: bottom;
+    transition: all 250ms ease-in-out;
+}
+
+.copymsg.active{
+    opacity: 1;
+    transform: scale(1);
+}
